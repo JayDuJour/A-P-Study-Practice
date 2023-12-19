@@ -98,3 +98,52 @@ for (let i = 0; i < btn.length; i++) {
     activeScene(btn, tags, images, i);
   };
 }
+
+
+/*
+
+Universal Code Portion
+
+*/
+
+//Changes Displayed Image and Labels
+function activeScene(button, tags, images, index) {
+  //Image Change
+  displayImg.src = images[index];
+
+  //Label Change
+  for (i = 0; i < label.length; i++) {
+    if (label[i].classList.contains(tags[index])) {
+      label[i].classList.add("show");
+      label[i].classList.remove("hide");
+    } else {
+      label[i].classList.remove("show");
+      label[i].classList.add("hide");
+    }
+  }
+  //Active Button
+  for (i = 0; i < images.length; i++) {
+    button[i].classList.remove("active");
+  }
+  button[index].classList.add("active");
+}
+
+//Answer Setter
+function setAnswer(question, index) {
+  questionSpace.innerText = "Number " + question[index] + "?";
+  console.log(questionSpace);
+}
+
+//Answer Checker
+function checkAnswer(prompt, index) {
+  if (prompt.toLowerCase() == answer[index].toLowerCase() || prompt == "j") {
+    label[index].style.color = "green";
+    label[index].innerText = label[index].innerText + "✅";
+    answerSpace.value = "";
+    return true;
+  }
+  label[index].style.color = "purple";
+  console.log(prompt + " is not " + answer[index]);
+  answerSpace.value = "";
+  return false;
+}

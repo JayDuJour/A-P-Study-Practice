@@ -1,0 +1,26 @@
+#display-img {
+    width: 100%;
+}
+
+/* background */
+body {
+    background-color: gray;
+}
+
+/* photo section */
+.img-and-labels {
+    position: relative;
+}
+
+.num {
+    position: absolute;
+    z-index: 2;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

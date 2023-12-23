@@ -142,7 +142,7 @@ function checkAnswer(prompt, index) {
     answerSpace.value = "";
     return true;
   }
-  label[index].style.color = "purple";
+  label[index].style.color = "red";
   console.log(prompt + " is not " + answer[index]);
   answerSpace.value = "";
   return false;

@@ -193,6 +193,7 @@ body {
     position: relative;
 }
 
+/* Label FX*/
 .num {
     position: absolute;
     z-index: 2;
@@ -204,4 +205,8 @@ body {
 
 .hide {
     display: none;
+}
+
+.highlight {
+    text-shadow: #FC0 1px 0 10px;
 }

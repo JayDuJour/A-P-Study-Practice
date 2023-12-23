@@ -131,6 +131,10 @@ function activeScene(button, tags, images, index) {
 //Answer Setter
 function setAnswer(question, index) {
   questionSpace.innerText = "Number " + question[index] + "?";
+  for(let i = 0; i < label.length; i++) {
+    label[i].classList.remove('highlight');
+  }
+  label[index].classList.add("highlight");
   console.log(questionSpace);
 }
 
@@ -139,6 +143,7 @@ function checkAnswer(prompt, index) {
   if (prompt.toLowerCase() == answer[index].toLowerCase() || prompt == "j") {
     label[index].style.color = "green";
     label[index].innerText = label[index].innerText + "✅";
+    label[index].classList.remove("highlight");
     answerSpace.value = "";
     return true;
   }
